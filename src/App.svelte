@@ -60,7 +60,7 @@
   <Shuffle on:shuffle={handleShuffle} />
 
   <p class='comment'>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
+    Check out <a href="https://ithelp.ithome.com.tw/users/20120178/ironman/7031" target="_blank" rel="noreferrer">Svelte Tutorial</a>, the awesome article powered by TheGreatSvelte!
   </p>
 </main>
 
