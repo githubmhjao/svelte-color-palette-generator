@@ -3,13 +3,13 @@
 
   const dispatch = createEventDispatcher();
   const handleShuffle = () => {
-    dispatch('shuffle');
-  }
+    dispatch("shuffle");
+  };
 </script>
 
-<div class='shuffle'>
+<div class="shuffle">
   <button on:click={handleShuffle}>
-    <span class='name'>Shuffle</span><span class='icon'></span>
+    <span class="name">Shuffle</span><span class="icon" />
   </button>
 </div>
 
