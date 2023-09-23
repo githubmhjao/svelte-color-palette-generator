@@ -1,31 +1,35 @@
 <script>
-  import { flip } from 'svelte/animate';
-  import { send, receive } from './transition.js';
-  
+  import { flip } from "svelte/animate";
+  import { send, receive } from "./transition.js";
+
+  import lock from "../assets/lock.svg";
+  import unlock from "../assets/unlock.svg";
+
   export let palettes;
 </script>
 
 <div class="palettes">
   {#each palettes as palette (palette.id)}
-    <div 
+    <div
       class="card"
-      in:receive={{key: (palette.id)}}
-      out:send={{key: (palette.id)}}
-      animate:flip={{duration: 200}}
+      in:receive={{ key: palette.id }}
+      out:send={{ key: palette.id }}
+      animate:flip={{ duration: 200 }}
     >
-      <div 
-        class="palette"
-        style:--color-palette={'#' + palette.color}
-      >
-      </div>
-      <div class='hex-code'>
+      <div class="palette" style:--color-palette={"#" + palette.color} />
+      <div class="hex-code">
         <label>
-          <input bind:value={palette.color}>
+          <input bind:value={palette.color} />
         </label>
       </div>
-      <div class='lock-icon'>
-        <label class:lock={palette.lock}>
-          <input type='checkbox' bind:checked={palette.lock}>
+      <div class="lock-icon">
+        <label>
+          <input type="checkbox" bind:checked={palette.lock} />
+          {#if palette.lock}
+            <img src={lock} alt="color-locked" />
+          {:else}
+            <img src={unlock} alt="color-unlocked" />
+          {/if}
         </label>
       </div>
     </div>
@@ -76,17 +80,9 @@
     display: flex;
     width: 3em;
     height: 3em;
+    padding: 0.7em;
     opacity: 0.3;
-    background: transparent;
-    background-repeat: no-repeat;
-    background-size: 1.5em 1.5em;
-    background-position: center;
-    background-image: url(../assets/unlock.svg);
     cursor: pointer;
-  }
-
-  .card .lock-icon label.lock {
-    background-image: url(../assets/lock.svg);
   }
 
   .card .lock-icon label:hover {
