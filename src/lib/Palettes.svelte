@@ -42,11 +42,10 @@
     flex: 1;
     display: grid;
     gap: 0.5em;
-    --border-width: 0.5em;
   }
 
   .card {
-    padding: 1em;
+    padding: 0.5em;
     background: var(--color-bg-3);
     border-radius: var(--border-radius);
     display: grid;
@@ -62,6 +61,7 @@
 
   .card .hex-code input {
     font-size: 2em;
+    padding: 0.2em 0;
     width: 80%;
     background: transparent;
     border-radius: 0.2em;
